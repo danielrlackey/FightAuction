@@ -7,6 +7,7 @@ export const styles = theme => ({
     },
     homePageHeader: {
         textAlign: "center",
+        paddingTop: "100px",
         marginBottom: "50px"
     }
     

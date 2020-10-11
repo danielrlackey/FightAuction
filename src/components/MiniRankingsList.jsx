@@ -10,16 +10,16 @@ const MiniRankingsList = (props) => {
     const {rankings, classes, title} = props
     console.log(rankings, "hello")
     return(
-        <Paper>
+        <Paper className={classes.root}>
             <Link 
             to="rankings"
             className={classes.link}
             >    
-            <h1 className={title}>{title}</h1>                
+            <h2 className={classes.title}>{title}</h2>                
             </Link>
             {rankings && rankings.map((ranking) => {
                 return(
-                    <ul>
+                    <ul className={classes.rankingsList}>
                         <li>
                             {ranking.name}
                             {"/ "}

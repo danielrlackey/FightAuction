@@ -44,29 +44,34 @@ const HomePage = (props) => {
                         <HomePageImageDisplay/>
                     </div>
                 <hr className={classes.hrHead}/>
-                <Grid  container>
-                    <Grid className={classes.rankCol} container item md={6}>
-                        <div>
-                            {p4p &&
-                                <MiniRankingsList 
-                                rankings={p4p}
-                                title={"P4P Rankings"}
+                <h1 className={classes.boxingtitle}>Boxing Rankings</h1>
+                    <Grid  container>
+                        <Grid className={classes.rankCol} container item md={6}>
+                            <div>
+                                {p4p &&
+                                    <MiniRankingsList 
+                                    rankings={p4p}
+                                    title={"P4P Rankings"}
                             />
                             }
-                        </div>                     
-                    </Grid>
-                    <Grid className={classes.rankCol} container item md={6}>
-                        <div >
-                            {division &&
-                                <MiniRankingsList 
-                                rankings={division}
-                                title={"Divisional Rankings"}
-                                />
+                            </div>
+                            <div className={classes.divList}>
+                                {division &&
+                                    <MiniRankingsList 
+                                    rankings={division}
+                                    title={"Divisional Rankings"}
+                            />
                             }
-                        </div>
-                
+                            </div>                 
                     </Grid>
-                </Grid>
+                            <h1>UFC Rankings</h1>
+                        <Grid className={classes.rankCol} container item md={6}>
+                           
+                
+                        </Grid>
+                    </Grid>
+               
+               
                            
                 <FooterPage />
             </div> 
