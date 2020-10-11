@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_DATA_REQUEST, GET_DIVISIONAL_DATA } from "../types";
+import { GET_DATA_REQUEST, GET_DIVISIONAL_DATA, GET_UFCP4P_DATA } from "../types";
 
 // GET_DATA_SUCCESS, GET_DATA_ERROR
 
@@ -12,6 +12,7 @@ export const fighterRankingsData = () => {
        type: GET_DATA_REQUEST,
        payload: axios.get(baseUrl + "/rankings" )
     .then((res)=>{
+        // console.log(res.data, "from action")
         return res.data
     })
     .catch((err=>{
@@ -23,14 +24,32 @@ export const fighterRankingsData = () => {
 
 export const fighterDivisionalRankingsData = () => {
     const baseUrl = "http://localhost:5000"
+
      return{
          type: GET_DIVISIONAL_DATA,
          payload: axios.get(baseUrl + "/rankings/divisions" )
       .then((res)=>{
+        //   console.log(res.data, "from action")
           return res.data
       })
       .catch((err=>{
           console.log(err,'uhoh something went wrong :(')
       }))
      }
+  };
+
+  export const ufcP4pData = () => {
+      const baseUrl = "http://localhost:5000"
+
+      return {
+          type: GET_UFCP4P_DATA,
+          payload: axios.get(baseUrl + "/rankings/divisions/ufcp4p")
+          .then((res)=>{
+            console.log("hello")
+            return res.data
+          })
+          .catch((err=>{
+            console.log(err,'ufc data')
+          }))
+      }
   };

@@ -1,15 +1,16 @@
-import { GET_DATA_REQUEST, GET_DATA_SUCCESS, GET_DATA_ERROR, GET_DIVISIONAL_DATA } from "../types";
+import { GET_DATA_REQUEST, GET_DATA_SUCCESS, GET_DATA_ERROR, GET_DIVISIONAL_DATA, GET_UFCP4P_DATA } from "../types";
 
 const initialState = {
     data: [],
     p4pFighters: [],
-    champsByDivision:[],
+    champsByDivision: [],
+    ufcP4pFighters: [],
     error: ""
 };
 
 
 const FighterRankingsReducer = (state = initialState, action) => {
-       console.log(state.data)
+    // console.log(state)
     switch(action.type) {
             case GET_DATA_REQUEST:
              if(action.payload){
@@ -22,7 +23,6 @@ const FighterRankingsReducer = (state = initialState, action) => {
                     }
              }            
                 case GET_DIVISIONAL_DATA:
-                
                     if(action.payload){
                     return {
                         ...state,
@@ -30,9 +30,22 @@ const FighterRankingsReducer = (state = initialState, action) => {
 
                             ...action.payload.champsByDivision
                         ],
-                        error: ""
+                    error: ""
+                    }
+            }
+                case GET_UFCP4P_DATA: 
+                    
+                    if(action.payload){
+                        return{
+                            ...state,
+                            ufcP4pFighters: [
+
+                            ...action.payload.ufcP4pFighters
+                        ],
+                        error: "error from ufc data"
                 }
             }
+
             case GET_DATA_SUCCESS:
             return {
                 ...state,

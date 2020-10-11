@@ -134,8 +134,8 @@ const p4pBoxingRankings = {
     ]
 
 }
+  
 
 
 
-    
-  module.exports = p4pBoxingRankings;
+module.exports = p4pBoxingRankings;

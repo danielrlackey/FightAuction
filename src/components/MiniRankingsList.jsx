@@ -8,7 +8,7 @@ import {styles} from "./MiniRankingsList.styles.js";
 const MiniRankingsList = (props) => {
    
     const {rankings, classes, title} = props
-    console.log(rankings, "hello")
+    
     return(
         <Paper className={classes.root}>
             <Link 

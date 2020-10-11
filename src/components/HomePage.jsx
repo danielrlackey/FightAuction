@@ -24,8 +24,11 @@ const HomePage = (props) => {
     useEffect(()=>{
         props.fighterDivisionalRankingsData()
         props.fighterRankingsData()
+        // props.ufcP4pData()
     },[])
 
+    // console.log(ufcP4pData)
+    
     // code to duplicate below
     // const division = rankings.data.filter((rank) => rank.type == "div")
     // const p4p = rankings.data.filter((rank)=>rank.type == "p4p")
@@ -86,6 +89,7 @@ const mapStateToProps = ({rankings}) => {
 const mapDispatchToProps = (dispatch) => ({
     fighterRankingsData: (data) => dispatch(fighterRankingsData(data)),
     fighterDivisionalRankingsData: (data) => dispatch(fighterDivisionalRankingsData(data)),
+    // ufcP4pData: (data) => dispatch(ufcP4pData(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles, {withTheme: true})(HomePage));
