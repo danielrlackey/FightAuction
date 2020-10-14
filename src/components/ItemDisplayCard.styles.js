@@ -20,6 +20,7 @@ export const styles = theme => ({
         transform: 'rotate(180deg)',
       },
       avatar: {
-        backgroundColor: blue[500],
+        backgroundColor: "#c2252f",
       },
+      
 });
