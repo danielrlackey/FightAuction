@@ -25,35 +25,31 @@ const BrowseItemsPage = (props) => {
         <div className={classes.root}>
             <Navbar />
                 <div className={classes.header}>
-                    <h3>Browse and buy fight memorabilia</h3>
+                    <h1>Browse and buy fight memorabilia</h1>
+                    
                 </div>
-                {ItemDisplayCard && ItemDisplayCard.map((card)=> {
-                    return(
                         <Grid 
                         container 
-                        spacing={4}
-                        className={classes.displayCard}
+                        spacing={1}
                         direction="row"
-                        justify="center"
-                        alignItems="center"
+                        alignContent="center"
                         >
-                        <Grid item xs={12} lg={4}>
+                        
                             {posts && posts.userPosts && posts.userPosts.map((post)=>{
                             return(
-                                <ItemDisplayCard 
-                                    itemDescription={post && post.itemDescription}
-                                    askingPrice={post && post.askingPrice}
-                                    itemDetails={post && post.itemDetails}
-                                    pictures={post && post.pictures}
-                                />
+                                <Grid container item xs={12} md={6} lg={4}>
+                                    <ItemDisplayCard 
+                                        itemDescription={post && post.itemDescription}
+                                        askingPrice={post && post.askingPrice}
+                                        itemDetails={post && post.itemDetails}
+                                        pictures={post && post.pictures}
+                                    />
+                                </Grid>
                                 )
                                 })}
-                
-                       
-                        </Grid>
+                      
                     </Grid>
-                    )
-                })}
+            
                 
              
                 <div>

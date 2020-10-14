@@ -3,7 +3,10 @@ import { blue } from '@material-ui/core/colors';
 export const styles = theme => ({
 
     root: {
-        maxWidth: 345,
+        width: 400,
+        marginLeft: "35px",
+        marginBottom: "35px",
+        marginTop: "35px"
       },
       media: {
         height: 0,

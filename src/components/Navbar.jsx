@@ -19,13 +19,11 @@ import Box from '@material-ui/core/Box';
       <AppBar className={classes.color} position="static">
         <Toolbar >
           <Box display='flex' flexGrow={1}>
-            <img src={logoPic} alt="logo" className={classes.logo} />
             <NavLink 
             to="/" 
-            className={classes.inactive}
-            activeClassName={classes.active}
-          >
-            Home
+            >
+            <img src={logoPic} alt="logo" className={classes.logo} />
+            
           </NavLink>
           </Box>
           <NavLink 

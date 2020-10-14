@@ -12,7 +12,7 @@ export const fighterRankingsData = () => {
        type: GET_DATA_REQUEST,
        payload: axios.get(baseUrl + "/rankings" )
     .then((res)=>{
-        // console.log(res.data, "from action")
+        console.log(res.data, "from action")
         return res.data
     })
     .catch((err=>{
@@ -29,7 +29,7 @@ export const fighterDivisionalRankingsData = () => {
          type: GET_DIVISIONAL_DATA,
          payload: axios.get(baseUrl + "/rankings/divisions" )
       .then((res)=>{
-        //   console.log(res.data, "from action")
+          console.log(res.data, "from action")
           return res.data
       })
       .catch((err=>{
@@ -40,12 +40,13 @@ export const fighterDivisionalRankingsData = () => {
 
   export const ufcP4pData = () => {
       const baseUrl = "http://localhost:5000"
-
+     
       return {
           type: GET_UFCP4P_DATA,
           payload: axios.get(baseUrl + "/rankings/divisions/ufcp4p")
           .then((res)=>{
-            console.log("hello")
+            console.log(res.data, "from the action")
+            
             return res.data
           })
           .catch((err=>{

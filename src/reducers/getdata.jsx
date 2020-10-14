@@ -36,11 +36,13 @@ const FighterRankingsReducer = (state = initialState, action) => {
                 case GET_UFCP4P_DATA: 
                     
                     if(action.payload){
+  
+                    
                         return{
                             ...state,
                             ufcP4pFighters: [
-
-                            ...action.payload.ufcP4pFighters
+                            
+                            ...action.payload.ufcP4pfighters
                         ],
                         error: "error from ufc data"
                 }
