@@ -25,7 +25,7 @@ export const styles = theme => ({
         display: "flex",
         justifyContent: "center"    
     },
-    rankCol: {
+    rankCol2: {
         display: "flex",
         marginLeft: "25px",
         marginTop: "30px",

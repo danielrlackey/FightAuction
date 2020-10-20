@@ -8,7 +8,7 @@ const FighterRankings = (props) => {
 const {rankings} = props
    
 
-    useEffect(()=>{
+    useEffect((props)=>{
         props.fighterDivisionalRankingsData()
         props.fighterRankingsData()
         props.ufcP4pData()

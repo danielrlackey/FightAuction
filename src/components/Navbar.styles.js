@@ -22,9 +22,6 @@ export const styles = theme => ({
       marginLeft: "15px",
       marginTop: "5px",
     },
-    homebtn: {
-
-    },
     logo:{
       margin: 0,
       padding: 0,

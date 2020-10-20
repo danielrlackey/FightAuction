@@ -22,8 +22,8 @@ const HomePage = (props) => {
     
 
     useEffect(()=>{
-        props.fighterDivisionalRankingsData()
-        props.fighterRankingsData()
+        fighterDivisionalRankingsData()
+        fighterRankingsData()
         // props.ufcP4pData()
     },[])
 
@@ -68,7 +68,7 @@ const HomePage = (props) => {
                             </div>                 
                     </Grid>
                             <h1>UFC Rankings</h1>
-                        <Grid className={classes.rankCol} container item md={6}>
+                        <Grid className={classes.rankCol2} container item md={6}>
                            
                 
                         </Grid>

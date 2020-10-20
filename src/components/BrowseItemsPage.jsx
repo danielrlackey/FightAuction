@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import FooterPage from "./FooterPage.jsx";
 import ItemDisplayCard from "./ItemDisplayCard.jsx";
@@ -13,11 +13,12 @@ import {styles} from "./BrowseItemsPage.styles.js";
 // some notes
 const BrowseItemsPage = (props) => {
 
-    const  {posts, getItems, classes,} = props
+    // possibly add get items to props
+    const  {posts, classes,} = props
     
 
-    useEffect(()=>{
-        getItems()
+    useEffect((props)=>{
+        props.getItems()
     },[])
     
     return (

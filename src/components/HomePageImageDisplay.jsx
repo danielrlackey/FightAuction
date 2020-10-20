@@ -1,9 +1,8 @@
 import React from "react";
-import Grid from '@material-ui/core/Grid';
 import {styles} from "./HomePageImageDisplay.styles.js";
 import { withStyles } from '@material-ui/core/styles';
 import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
+
 
 import boxingpic1 from '../images/boxingpic1.jpg'
 import boxingpic2 from '../images/boxingpic2.jpg'

@@ -1,6 +1,6 @@
 import React from "react";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-import logoPic from '../images/logo2.png'
+import { MDBFooter } from "mdbreact";
+
 
 // styling imports
 import { withStyles } from '@material-ui/core/styles';

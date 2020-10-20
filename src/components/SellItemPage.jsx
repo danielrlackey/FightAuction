@@ -1,6 +1,5 @@
 import React from "react";
 import FooterPage from "./FooterPage.jsx";
-import { Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 import SellItemForm from "./SellItemForm.jsx";
 

@@ -12,7 +12,9 @@ const initialState = {
 const FighterRankingsReducer = (state = initialState, action) => {
     // console.log(state)
     switch(action.type) {
+            
             case GET_DATA_REQUEST:
+                
              if(action.payload){
                 return {
                     ...state,
@@ -21,7 +23,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
                     ],
                     error: ""
                     }
-             }            
+             }       
                 case GET_DIVISIONAL_DATA:
                     if(action.payload){
                     return {
