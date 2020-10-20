@@ -8,10 +8,10 @@ const FighterRankings = (props) => {
 const {rankings} = props
    
 
-    useEffect((props)=>{
-        props.fighterDivisionalRankingsData()
-        props.fighterRankingsData()
-        props.ufcP4pData()
+    useEffect(()=>{
+        fighterDivisionalRankingsData()
+        fighterRankingsData()
+        ufcP4pData()
     },[])
     
       

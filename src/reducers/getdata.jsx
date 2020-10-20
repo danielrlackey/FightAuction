@@ -1,7 +1,6 @@
 import { GET_DATA_REQUEST, GET_DATA_SUCCESS, GET_DATA_ERROR, GET_DIVISIONAL_DATA, GET_UFCP4P_DATA } from "../types";
 
 const initialState = {
-    data: [],
     p4pFighters: [],
     champsByDivision: [],
     ufcP4pFighters: [],
@@ -20,10 +19,10 @@ const FighterRankingsReducer = (state = initialState, action) => {
                     ...state,
                     p4pFighters: [  
                         ...action.payload.p4pFighters
-                    ],
+                    ], 
                     error: ""
-                    }
-             }       
+                    } 
+             }      break;
                 case GET_DIVISIONAL_DATA:
                     if(action.payload){
                     return {
@@ -34,7 +33,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
                         ],
                     error: ""
                     }
-            }
+            }       break;
                 case GET_UFCP4P_DATA: 
                     
                     if(action.payload){
@@ -49,7 +48,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
                         error: "error from ufc data"
                 }
             }
-
+                    break;
             case GET_DATA_SUCCESS:
             return {
                 ...state,
@@ -64,6 +63,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
                 }
             default:
                 return initialState;
+                
         }
 }
 

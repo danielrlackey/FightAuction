@@ -17,8 +17,8 @@ const BrowseItemsPage = (props) => {
     const  {posts, classes,} = props
     
 
-    useEffect((props)=>{
-        props.getItems()
+    useEffect(()=>{
+        getItems()
     },[])
     
     return (
