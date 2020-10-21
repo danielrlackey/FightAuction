@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar.jsx"
 import {connect} from "react-redux";
 import MiniRankingsList from "./MiniRankingsList";
 import Grid from '@material-ui/core/Grid';
-import {fighterRankingsData, fighterDivisionalRankingsData} from "../actions/getdata.jsx";
+import {fighterRankingsData, fighterDivisionalRankingsData, ufcP4pData} from "../actions/getdata.jsx";
 
 // styling imports
 import { withStyles } from '@material-ui/core/styles';
@@ -18,16 +18,18 @@ import {styles} from "./HomePage.styles.js";
 
 const HomePage = (props) => {
 
-    const {rankings, classes} = props
+    const {rankings, classes,  ufcP4pData, fighterDivisionalRankingsData, fighterRankingsData } = props
     
+    console.log(rankings.data,"from the home page")
 
     useEffect(()=>{
         fighterDivisionalRankingsData()
         fighterRankingsData()
-        // props.ufcP4pData()
+        ufcP4pData()
     },[])
 
-    // console.log(ufcP4pData)
+    
+    
     
     // code to duplicate below
     // const division = rankings.data.filter((rank) => rank.type == "div")
@@ -36,6 +38,8 @@ const HomePage = (props) => {
 
     const division = rankings.champsByDivision
     const p4p = rankings.p4pFighters
+    const ufcp4p = rankings.ufcP4pFighters
+
 
     return (
         <div className={classes.background}>
@@ -47,35 +51,52 @@ const HomePage = (props) => {
                         <HomePageImageDisplay/>
                     </div>
                 <hr className={classes.hrHead}/>
-                <h1 className={classes.boxingtitle}>Boxing Rankings</h1>
+                
                     <Grid  container>
+                        <Grid container item md={6}>
+                            <h1 className={classes.boxingtitle}>Boxing Rankings</h1>
+                        </Grid>
+                        <Grid container item md={6}>
+                            <h1 className={classes.ufctitle}>UFC Rankings</h1>
+                        </Grid>
+                        <Grid className={classes.rankCol} container item md={6}>
+                            <div className={classes.box1}>
+                                {p4p &&
+                                    <MiniRankingsList 
+                                        rankings={p4p}
+                                        title={"P4P Rankings"}
+                                    />
+                                 }
+                            </div> 
+                            <div>
+                                {p4p &&
+                                    <MiniRankingsList 
+                                        rankings={division}
+                                        title={"Divisional Rankings"}
+                                    />
+                                 }
+                            </div>               
+                        </Grid>
+                        
                         <Grid className={classes.rankCol} container item md={6}>
                             <div>
                                 {p4p &&
                                     <MiniRankingsList 
-                                    rankings={p4p}
-                                    title={"P4P Rankings"}
-                            />
-                            }
-                            </div>
-                            <div className={classes.divList}>
-                                {division &&
+                                        rankings={ufcp4p}
+                                        title={"UFC P4P Rankings"}
+                                    />
+                                 }
+                            </div>  
+                            {/* <div>
+                                {p4p &&
                                     <MiniRankingsList 
-                                    rankings={division}
-                                    title={"Divisional Rankings"}
-                            />
-                            }
-                            </div>                 
-                    </Grid>
-                            <h1>UFC Rankings</h1>
-                        <Grid className={classes.rankCol2} container item md={6}>
-                           
-                
-                        </Grid>
-                    </Grid>
-               
-               
-                           
+                                        rankings={p4p}
+                                        title={""}
+                                    />
+                                 }
+                            </div>                           */}
+                        </Grid>   
+                    </Grid>          
                 <FooterPage />
             </div> 
         </div>
@@ -89,7 +110,7 @@ const mapStateToProps = ({rankings}) => {
 const mapDispatchToProps = (dispatch) => ({
     fighterRankingsData: (data) => dispatch(fighterRankingsData(data)),
     fighterDivisionalRankingsData: (data) => dispatch(fighterDivisionalRankingsData(data)),
-    // ufcP4pData: (data) => dispatch(ufcP4pData(data))
+    ufcP4pData: (data) => dispatch(ufcP4pData(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles, {withTheme: true})(HomePage));

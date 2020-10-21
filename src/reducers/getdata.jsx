@@ -1,6 +1,7 @@
 import { GET_DATA_REQUEST, GET_DATA_SUCCESS, GET_DATA_ERROR, GET_DIVISIONAL_DATA, GET_UFCP4P_DATA } from "../types";
 
 const initialState = {
+    data: [],
     p4pFighters: [],
     champsByDivision: [],
     ufcP4pFighters: [],
@@ -9,10 +10,12 @@ const initialState = {
 
 
 const FighterRankingsReducer = (state = initialState, action) => {
-    // console.log(state)
+   
     switch(action.type) {
+        
             
             case GET_DATA_REQUEST:
+                console.log(action, "from the reducer")
                 
              if(action.payload){
                 return {
@@ -22,6 +25,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
                     ], 
                     error: ""
                     } 
+                    
              }      break;
                 case GET_DIVISIONAL_DATA:
                     if(action.payload){

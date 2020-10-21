@@ -11,16 +11,13 @@ paper: {
   },
   inputArea: {
     marginTop: "5px",
-    backgroundColor: "white",
-    border: "1px solid #4f5054",
-    boxShadow: "2px 2px #4f5054"
+    boxShadow: "2px 2px 4px #000000"
   },
   btnContainer: {
     textAlign: "center",
   },
   btn: {
-    border: "1px solid #4f5054",
-    boxShadow: "2px 2px #4f5054",
+    boxShadow: "2px 2px 4px #000000",
     marginTop: "10px",
     color: "#c2252f"
   },

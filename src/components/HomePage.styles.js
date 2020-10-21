@@ -6,31 +6,33 @@ export const styles = theme => ({
         backgroundImage: `url(${newBgg})`,
         backgroundSize: "cover",
         marginTop: -50,
-
         backgroundColor: "#fff",
         color: "#c2252f"
     },
     boxingtitle: {
         marginTop: "20px",
         marginBottom: "-30px",
-        marginLeft: "200px",
+        marginLeft: "230px",
         textShadow: "2px 2px 4px #000000",
         fontweight: "600"
     },
-    rankCol:{
+    box1: {
+        marginRight: "5px"
+    },
+    picRow: {
         display: "flex",
         justifyContent: "center"
     },
-    picRow:{
+    rankCol:{
         display: "flex",
-        justifyContent: "center"    
+        justifyContent: "center",
+        marginTop: "20px"
     },
-    rankCol2: {
-        display: "flex",
-        marginLeft: "25px",
-        marginTop: "30px",
-    },
-    divList: {
-        marginLeft: "8px"
+    ufctitle: {
+        marginTop: "20px",
+        marginBottom: "-30px",
+        marginLeft: "200px",
+        textShadow: "2px 2px 4px #000000",
+        fontweight: "600",
     }
     });
