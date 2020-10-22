@@ -59,9 +59,9 @@ export const fighterDivisionalRankingsData = () => {
    
     return {
         type: GET_UFC_DIVISIONS,
-        payload: axios.get(baseUrl + "/rankings/ufcdivisions")
+        payload: axios.get(baseUrl + "/rankings/divisions/ufcp4p/ufcdivisions")
         .then((res)=>{ 
-            console.log(res.data)
+            console.log(res.data, "hello!!!")
           return res.data
         })
         .catch((err=>{

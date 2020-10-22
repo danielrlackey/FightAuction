@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar.jsx"
 import {connect} from "react-redux";
 import MiniRankingsList from "./MiniRankingsList";
 import Grid from '@material-ui/core/Grid';
-import {fighterRankingsData, fighterDivisionalRankingsData, ufcP4pData, ufcDivisions} from "../actions/getdata.jsx";
+import {fighterRankingsData, fighterDivisionalRankingsData, ufcP4pData, ufcDivisions } from "../actions/getdata.jsx";
 
 // styling imports
 import { withStyles } from '@material-ui/core/styles';
@@ -18,6 +18,7 @@ import {styles} from "./HomePage.styles.js";
 
 const HomePage = (props) => {
 
+    // import ufc divisions
     const { rankings, classes, ufcDivisions, ufcP4pData, fighterDivisionalRankingsData, fighterRankingsData } = props
     
     console.log(rankings.data,"from the home page")
@@ -39,8 +40,8 @@ const HomePage = (props) => {
 
     const division = rankings.champsByDivision
     const p4p = rankings.p4pFighters
-    const ufcp4p = rankings.ufcP4pFighters
-    const ufcDivisionalChamps = rankings.ufcChamps 
+    // const ufcp4p = rankings.ufcP4pFighters
+    // const ufcDivisionalChamps = rankings.ufcChamps 
 
     return (
         <div className={classes.background}>
@@ -80,14 +81,14 @@ const HomePage = (props) => {
                         </Grid>
                         
                         <Grid className={classes.rankCol} container item md={6}>
-                            <div>
+                            {/* <div>
                                 {p4p &&
                                     <MiniRankingsList 
                                         rankings={ufcp4p}
                                         title={"UFC P4P Rankings"}
                                     />
                                  }
-                            </div>  
+                            </div>   */}
                             {/* <div>
                                 {ufcDivisionalChamps &&
                                     <MiniRankingsList 

@@ -24,7 +24,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
                         ], 
                         error: ""
                     }   
-             }break;
+            }break;
 
             case GET_DIVISIONAL_DATA:
                 if(action.payload){
@@ -48,17 +48,17 @@ const FighterRankingsReducer = (state = initialState, action) => {
                 }
             }break;
 
-            case GET_UFC_DIVISIONS: 
-                if(action.payload){
-                    return{
-                        ...state,
-                        ufcChamps: [
-                            ...action.payload.ufcChamps
-                        ],
-                        error: "error from ufc data"
-                }
-            }break;
-            
+            // case GET_UFC_DIVISIONS: 
+            //     if(action.payload){
+            //         return{
+            //             ...state,
+            //             ufcChamps: [
+            //                 ...action.payload.ufcChamps
+            //             ],
+            //             error: "error from ufc data"
+            //     }
+            // }break;
+
             case GET_DATA_SUCCESS:
             return {
                 ...state,
