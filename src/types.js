@@ -16,3 +16,6 @@ export const GET_DIVISIONAL_DATA_ERROR = "GET_DIVISIONAL_DATA_ERROR"
 
 // axios reducer for p4p ufc rankings
 export const GET_UFCP4P_DATA = "GET_UFCP4P_DATA"
+
+// axios reducer for ufc divisions
+export const GET_UFC_DIVISIONS = "GET_UFC_DIVISIONS"

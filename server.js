@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const p4pBoxingRankings = require("./p4pBoxingRankings")
 const divisionalRankings = require("./divisionalRankings.js")
 const ufcP4pRankings = require("./ufcRankings.js")
+const ufcDivisionalRankings = require("./ufcDivisionalRankings.js")
 
 let bodyParser = require('body-parser');
 const app = express();
@@ -68,6 +69,10 @@ app.get("/rankings/divisions", async(req, res) => {
 
 app.get("/rankings/divisions/ufcp4p", async(req, res) => {
     res.send(ufcP4pRankings);
+})
+
+app.get("rankings/ufcdivisions", async(req, res) => {
+    res.send(ufcDivisionalRankings);
 })
 
 app.post("/items", function(req, res){

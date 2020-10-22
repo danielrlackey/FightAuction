@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_DATA_REQUEST, GET_DIVISIONAL_DATA, GET_UFCP4P_DATA } from "../types";
+import { GET_DATA_REQUEST, GET_DIVISIONAL_DATA, GET_UFCP4P_DATA, GET_UFC_DIVISIONS } from "../types";
 
 // GET_DATA_SUCCESS, GET_DATA_ERROR
 
@@ -52,3 +52,20 @@ export const fighterDivisionalRankingsData = () => {
           }))
       }
   };
+
+
+  export const ufcDivisions = () => {
+    const baseUrl = "http://localhost:5000"
+   
+    return {
+        type: GET_UFC_DIVISIONS,
+        payload: axios.get(baseUrl + "/rankings/ufcdivisions")
+        .then((res)=>{ 
+            console.log(res.data)
+          return res.data
+        })
+        .catch((err=>{
+          console.log(err,'ufc data')
+        }))
+    }
+};
