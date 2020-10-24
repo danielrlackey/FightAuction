@@ -29,11 +29,11 @@ const {rankings, fighterRankingsData, fighterDivisionalRankingsData, ufcP4pData,
                 <div>
                     <BoxingRankingTable
                     rankings={p4p} 
-                    title={"P4P Rankings"}    
+                    title={"P4P Boxing Rankings"}    
                 />
                     <BoxingRankingTable 
                     rankings={division}
-                    title={"Divisional Rankings"} 
+                    title={"Boxing Divisional Rankings"} 
                 />
                     <BoxingRankingTable 
                     rankings={ufcp4p}

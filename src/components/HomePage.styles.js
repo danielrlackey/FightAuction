@@ -19,6 +19,9 @@ export const styles = theme => ({
     box1: {
         marginRight: "5px"
     },
+    box2: {
+        marginRight: "5px"
+    },
     picRow: {
         display: "flex",
         justifyContent: "center"
@@ -31,7 +34,7 @@ export const styles = theme => ({
     ufctitle: {
         marginTop: "20px",
         marginBottom: "-30px",
-        marginLeft: "200px",
+        marginLeft: "250px",
         textShadow: "2px 2px 4px #000000",
         fontweight: "600",
     }

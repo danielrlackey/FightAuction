@@ -95,6 +95,30 @@ const ufcDivisionalRankings = {
             stance: "Orthodox",
             height: "5'5",
             reach: 68,
+        },
+        {
+            type: "ufcChamps",
+            division: "Womens Featherweight",
+            name: "Amanda Nunes",
+            record: "20-4-0",
+            kos: 13,
+            submissions: 3,
+            nationality: "Brazil", 
+            stance: "Orthodox",
+            height: "5'8",
+            reach: 69,
+        },
+        {
+            type: "ufcChamps",
+            division: "Womens Bantamweight",
+            name: "Amanda Nunes",
+            record: "20-4-0",
+            kos: 13,
+            submissions: 3,
+            nationality: "Brazil", 
+            stance: "Orthodox",
+            height: "5'8",
+            reach: 69,
         }
     ]
 }

@@ -11,10 +11,19 @@ import boxingpic4 from '../images/boxingpic4.jpeg'
 import boxingpic5 from '../images/boxingpic5.jpg'
 import boxingpic6 from '../images/boxingpic6.jpg'
 import boxingpic7 from '../images/boxingpic7.jpg'
-
-//need two more unique images
-import boxingpic8 from '../images/boxingpic2.jpg'
-import boxingpic9 from '../images/boxingpic5.jpg'
+import boxingpic8 from '../images/boxingpic8.jpg'
+import boxingpic9 from '../images/boxingpic9.jpg'
+import boxingpic10 from '../images/boxingpic10.jpeg'
+import boxingpic11 from '../images/boxingpic11.jpg'
+import boxingpic12 from '../images/boxingpic12.webp'
+import boxingpic13 from '../images/boxingpic13.jpg'
+import boxingpic14 from '../images/boxingpic14.jpg'
+import boxingpic15 from '../images/boxingpic15.jpg'
+import boxingpic16 from '../images/boxingpic16.jpg'
+import boxingpic17 from '../images/boxingpic17.jpg'
+import boxingpic18 from '../images/boxingpic18.jpg'
+import boxingpic19 from '../images/boxingpic19.jpg'
+import boxingpic20 from '../images/boxingpic20.jpg'
 
 //Local stuff
 
@@ -33,6 +42,18 @@ class HomePageImageDisplay extends React.Component {
             boxingpic7,
             boxingpic8,
             boxingpic9,
+            boxingpic10,
+            boxingpic11,
+            boxingpic12,
+            boxingpic13,
+            boxingpic14,
+            boxingpic15,
+            boxingpic16,
+            boxingpic17,
+            boxingpic18,
+            boxingpic19,
+            boxingpic20,
+            
         ],
         showModal: false,
         popImageUrl: "",

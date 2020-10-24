@@ -83,7 +83,7 @@ const HomePage = (props) => {
                         </Grid>
                         
                         <Grid className={classes.rankCol} container item md={6}>
-                            <div>
+                            <div className={classes.box2}>
                                 {p4p &&
                                     <MiniRankingsList 
                                         rankings={ufcp4p}

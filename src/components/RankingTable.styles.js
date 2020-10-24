@@ -5,7 +5,8 @@ export const styles = theme => ({
        
       },
    title: {
-     color: "#c2252f"
+     color: "#c2252f",
+     marginLeft: "15px"
    },
    wrapper: {
      marginTop: 100

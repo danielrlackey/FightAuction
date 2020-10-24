@@ -26,7 +26,16 @@ const BrowseItemsPage = (props) => {
         <div className={classes.root}>
             <Navbar />
                 <div className={classes.header}>
-                    <h1>Browse and buy fight memorabilia</h1>
+                    <h1>Purchase fight memorabilia and more!</h1>
+                </div>
+                <div className={classes.list}>
+                    <h3 className={classes.title2}>things you can find here</h3>
+                    <ul>
+                        <li>Authographed Fight memorabilia</li>
+                        <li>Historical Fight Pieces</li>
+                        <li>New Equiptment</li>
+                        <li>Event Tickets</li>
+                    </ul>
                     
                 </div>
                         <Grid 
