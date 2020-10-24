@@ -100,3 +100,4 @@ const ufcDivisionalRankings = {
 }
 
 module.exports = ufcDivisionalRankings;
+                 

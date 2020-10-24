@@ -36,13 +36,6 @@ import Box from '@material-ui/core/Box';
               className={classes.inactive}
               activeClassName={classes.active}
           >
-              News
-          </NavLink>
-          <NavLink 
-              to="rankings" 
-              className={classes.inactive}
-              activeClassName={classes.active}
-          >
               Rankings
           </NavLink>
           <NavLink 

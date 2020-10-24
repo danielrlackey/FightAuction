@@ -54,7 +54,7 @@ export const fighterDivisionalRankingsData = () => {
   };
 
 
-  export const ufcDivisions = () => {
+  export const fetchUfcDivisions = () => {
     const baseUrl = "http://localhost:5000"
    
     return {

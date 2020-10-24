@@ -14,7 +14,7 @@ import {styles} from "./BrowseItemsPage.styles.js";
 const BrowseItemsPage = (props) => {
 
     // possibly add get items to props
-    const  {posts, classes,} = props
+    const  {posts, classes, getItems} = props
     
 
     useEffect(()=>{
@@ -60,14 +60,14 @@ const BrowseItemsPage = (props) => {
             )
         };
 
+function mapStateToProps({posts}) {
+    return {posts}
+}
 
 const mapDispatchToProps = (dispatch) => ({
     getItems: () => dispatch(getItems())
 });
 
-function mapStateToProps({posts}) {
-    return {posts}
-}
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles, {withTheme: true})(BrowseItemsPage));
 

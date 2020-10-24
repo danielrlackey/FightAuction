@@ -71,7 +71,7 @@ app.get("/rankings/divisions/ufcp4p", async(req, res) => {
     res.send(ufcP4pRankings);
 })
 
-app.get("rankings/divisions/ufcp4p/ufcdivisions", async(req, res) => {
+app.get("/rankings/divisions/ufcp4p/ufcdivisions", async(req, res) => {
     res.send(ufcDivisionalRankings);
 })
 

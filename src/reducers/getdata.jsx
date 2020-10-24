@@ -5,8 +5,9 @@ const initialState = {
     p4pFighters: [],
     champsByDivision: [],
     ufcP4pFighters: [],
-    ufcChamps: [],
-    error: ""
+    ufcDivisions: [],
+    error: "",
+    
 };
 
 
@@ -48,16 +49,17 @@ const FighterRankingsReducer = (state = initialState, action) => {
                 }
             }break;
 
-            // case GET_UFC_DIVISIONS: 
-            //     if(action.payload){
-            //         return{
-            //             ...state,
-            //             ufcChamps: [
-            //                 ...action.payload.ufcChamps
-            //             ],
-            //             error: "error from ufc data"
-            //     }
-            // }break;
+            case GET_UFC_DIVISIONS: 
+                if(action.payload){
+                    
+                    return{
+                        ...state,
+                        ufcDivisions: [
+                            ...action.payload.ufcDivisions
+                        ],
+                        error: "error from ufc data"
+                }
+            }break;
 
             case GET_DATA_SUCCESS:
             return {

@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar.jsx"
 import {connect} from "react-redux";
 import MiniRankingsList from "./MiniRankingsList";
 import Grid from '@material-ui/core/Grid';
-import {fighterRankingsData, fighterDivisionalRankingsData, ufcP4pData, ufcDivisions } from "../actions/getdata.jsx";
+import {fighterRankingsData, fighterDivisionalRankingsData, ufcP4pData, fetchUfcDivisions } from "../actions/getdata.jsx";
 
 // styling imports
 import { withStyles } from '@material-ui/core/styles';
@@ -18,8 +18,8 @@ import {styles} from "./HomePage.styles.js";
 
 const HomePage = (props) => {
 
-    // import ufc divisions
-    const { rankings, classes, ufcDivisions, ufcP4pData, fighterDivisionalRankingsData, fighterRankingsData } = props
+    // import ufcdivisions
+    const { rankings, classes, fetchUfcDivisions, ufcP4pData, fighterDivisionalRankingsData, fighterRankingsData } = props
     
     console.log(rankings.data,"from the home page")
 
@@ -27,7 +27,7 @@ const HomePage = (props) => {
         fighterDivisionalRankingsData()
         fighterRankingsData()
         ufcP4pData()
-        ufcDivisions()
+        fetchUfcDivisions()
     },[])
 
     
@@ -40,8 +40,10 @@ const HomePage = (props) => {
 
     const division = rankings.champsByDivision
     const p4p = rankings.p4pFighters
-    // const ufcp4p = rankings.ufcP4pFighters
-    // const ufcDivisionalChamps = rankings.ufcChamps 
+    const ufcp4p = rankings.ufcP4pFighters
+    const ufcDivisionalChamps = rankings.ufcDivisions
+
+        console.log(rankings, "tehehehe")
 
     return (
         <div className={classes.background}>
@@ -81,22 +83,22 @@ const HomePage = (props) => {
                         </Grid>
                         
                         <Grid className={classes.rankCol} container item md={6}>
-                            {/* <div>
+                            <div>
                                 {p4p &&
                                     <MiniRankingsList 
                                         rankings={ufcp4p}
                                         title={"UFC P4P Rankings"}
                                     />
                                  }
-                            </div>   */}
-                            {/* <div>
+                            </div>  
+                            <div>
                                 {ufcDivisionalChamps &&
                                     <MiniRankingsList 
                                         rankings={ufcDivisionalChamps}
                                         title={"Divisional Rankings"}
                                     />
                                  }
-                            </div>                           */}
+                            </div>                          
                         </Grid>   
                     </Grid>          
                 <FooterPage />
@@ -113,7 +115,7 @@ const mapDispatchToProps = (dispatch) => ({
     fighterRankingsData: (data) => dispatch(fighterRankingsData(data)),
     fighterDivisionalRankingsData: (data) => dispatch(fighterDivisionalRankingsData(data)),
     ufcP4pData: (data) => dispatch(ufcP4pData(data)),
-    ufcDivisions: (data) => dispatch(ufcDivisions(data))
+    fetchUfcDivisions: (data) => dispatch(fetchUfcDivisions(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles, {withTheme: true})(HomePage));
