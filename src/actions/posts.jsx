@@ -3,6 +3,7 @@ import Axios from "axios"
 
 const baseUrl = "http://localhost:5000"
 export const postItem = (item) =>{
+    console.log(item, "form action")
     return {
         type: POST_ITEM,
         payload: Axios.post(baseUrl + "/items",{item})

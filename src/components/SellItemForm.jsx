@@ -74,7 +74,7 @@ const SellItemForm = (props) => {
                 <ImageLoader
                     className={classes.inputArea}
                     value={pictures}
-                    onchange={(e) => setPictures(e.target.file)}
+                    setPictures={setPictures}
                 />
             <div className={classes.btnContainer}>
                 <Button 

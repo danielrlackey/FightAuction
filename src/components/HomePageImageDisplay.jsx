@@ -15,7 +15,7 @@ import boxingpic8 from '../images/boxingpic8.jpg'
 import boxingpic9 from '../images/boxingpic9.jpg'
 import boxingpic10 from '../images/boxingpic10.jpeg'
 import boxingpic11 from '../images/boxingpic11.jpg'
-import boxingpic12 from '../images/boxingpic12.webp'
+import boxingpic12 from '../images/boxingpic12.jpg'
 import boxingpic13 from '../images/boxingpic13.jpg'
 import boxingpic14 from '../images/boxingpic14.jpg'
 import boxingpic15 from '../images/boxingpic15.jpg'
@@ -69,12 +69,12 @@ class HomePageImageDisplay extends React.Component {
 
     
         const interval  = setInterval(()=>{
-            const randomOne = Math.floor(Math.random() * 8);
-            const randomTwo = Math.floor(Math.random() * 8);  
-            const randomThree = Math.floor(Math.random() * 8); 
+            const randomOne = Math.floor(Math.random() * 20);
+            const randomTwo = Math.floor(Math.random() * 20);  
+            const randomThree = Math.floor(Math.random() * 20); 
             this.setState({diceOne: randomOne})
             this.setState({ diceTwo: randomTwo})
-            this.setState({ diceTwo: randomThree})
+            this.setState({ diceThree: randomThree})
             
         },3000)
 
