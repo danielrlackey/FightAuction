@@ -1,10 +1,13 @@
 // all imports below
 const express = require("express");
 const mongoose = require('mongoose');
+const multer  = require('multer')
 const p4pBoxingRankings = require("./p4pBoxingRankings")
 const divisionalRankings = require("./divisionalRankings.js")
 const ufcP4pRankings = require("./ufcRankings.js")
 const ufcDivisionalRankings = require("./ufcDivisionalRankings.js")
+const DIR = './public/';
+
 
 let bodyParser = require('body-parser');
 const app = express();
@@ -22,6 +25,30 @@ mongoose.connect(URI, { useNewUrlParser: true })
   }).catch((err) => {
     console.log(err);
 })
+
+//file upload
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, DIR);
+    },
+    filename: (req, file, cb) => {
+        const fileName = file.originalname.toLowerCase().split(' ').join('-');
+        cb(null, uuidv4() + '-' + fileName)
+    }
+});
+
+var uploads = multer({
+    storage: storage,
+    fileFilter: (req, file, cb) => {
+        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+            cb(null, true);
+        } else {
+            cb(null, false);
+            return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
+        }
+    }
+});
 
 // code to stringify items below
 const ItemSchema = new mongoose.Schema({
@@ -58,22 +85,10 @@ app.get("/rankings/divisions/ufcp4p/ufcdivisions", async(req, res) => {
 
 })
 
-app.post("/items", function(req, res){
+app.post("/items", uploads.single('image'), function(req, res){
+    console.log(req.body)
 
-    if (!req.files) {
-        return res.status(500).send({ msg: "file is not found" })
-    }
-        // accessing the file
-    const myFile = req.files.file;
-    //  mv() method places the file inside public directory
-    myFile.mv(`${__dirname}/public/${myFile.name}`, function (err) {
-        if (err) {
-            console.log(err)
-            return res.status(500).send({ msg: "Error occured" });
-        }
-        // returing the response with file path and name
-        // return res.send({name: myFile.name, path: `/${myFile.name}`});
-    });
+    const image = req.body.item.picture[0]
 
     let item = new fightItem();
     item.itemDescription = req.body.item.itemDescription
@@ -81,7 +96,7 @@ app.post("/items", function(req, res){
     item.itemDetails = req.body.item.itemDetails
     item.save((err,res)=>{
     })
-    
+
 });
 
 
