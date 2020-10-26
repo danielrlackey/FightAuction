@@ -6,14 +6,31 @@ export const styles = theme => ({
     title: {
 
     },
-    container: {
+    linkContainer: {
         display: "flex",
         justifyContent: "center",
-        textDecoration: "none",
-        color: "white"
+        paddingTop: "70px"
+    },
+    links: {
+        textDecoration: "underline #000000",
+        color: "#000000"
+    },
+    a: {
+        textDecoration: "none !important",
     },
     signature: {
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "flex-end",
+        marginRight: "40px",
+        marginBottom: "-60px"
     },
+    iconContainer: {
+
+    },
+    icons: {
+        textDecoration: "none",
+        marginLeft: "20px",
+        marginBottom: "10px",
+        color: "#c2252f"
+    }
     });
