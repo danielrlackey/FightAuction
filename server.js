@@ -1,22 +1,25 @@
 // all imports below
 const express = require("express");
 const mongoose = require('mongoose');
-const multer  = require('multer')
+const fileUpload = require("express-fileupload")
 const p4pBoxingRankings = require("./p4pBoxingRankings")
 const divisionalRankings = require("./divisionalRankings.js")
 const ufcP4pRankings = require("./ufcRankings.js")
 const ufcDivisionalRankings = require("./ufcDivisionalRankings.js")
-const DIR = './public/';
+
 
 
 let bodyParser = require('body-parser');
-const app = express();
 let cors = require('cors');
+
+const app = express();
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(fileUpload());
 app.use(cors());
-
+app.use(express.static('public'));
 // code to connect datbase below
 const URI = "mongodb+srv://skunk_hunnt:P@cquiaop4p224@cluster0.4cqzd.mongodb.net/Fight_Auction?retryWrites=true&w=majority"
 mongoose.connect(URI, { useNewUrlParser: true })
@@ -26,29 +29,6 @@ mongoose.connect(URI, { useNewUrlParser: true })
     console.log(err);
 })
 
-//file upload
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, DIR);
-    },
-    filename: (req, file, cb) => {
-        const fileName = file.originalname.toLowerCase().split(' ').join('-');
-        cb(null, uuidv4() + '-' + fileName)
-    }
-});
-
-var uploads = multer({
-    storage: storage,
-    fileFilter: (req, file, cb) => {
-        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
-            cb(null, true);
-        } else {
-            cb(null, false);
-            return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
-        }
-    }
-});
 
 // code to stringify items below
 const ItemSchema = new mongoose.Schema({
@@ -67,7 +47,6 @@ app.get("/items", function(req, res){
     })
   })
 
-
 app.get("/rankings", async(req, res) => {
     res.send(p4pBoxingRankings);    
 })
@@ -85,11 +64,10 @@ app.get("/rankings/divisions/ufcp4p/ufcdivisions", async(req, res) => {
 
 })
 
-app.post("/items", uploads.single('image'), function(req, res){
-    console.log(req.body)
 
-    const image = req.body.item.picture[0]
 
+app.post("/items", function(req, res){
+      
     let item = new fightItem();
     item.itemDescription = req.body.item.itemDescription
     item.askingPrice = req.body.item.askingPrice
@@ -99,10 +77,22 @@ app.post("/items", uploads.single('image'), function(req, res){
 
 });
 
-
-app.delete("/items", function(req, res){
-    //Delete all the items in the database
-})
+app.post('/upload', (req, res) => {
+    if (req.files === null) {
+      return res.status(400).json({ msg: 'No file uploaded' });
+    }
+  
+    const file = req.files.file;
+  
+    file.mv(`${__dirname}/public/${file.name}`, err => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send(err);
+      }
+  
+      res.json({ fileName: file.name, filePath: `/public/${file.name}` });
+    });
+});
 
 
 app.listen(5000, function(){

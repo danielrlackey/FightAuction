@@ -3,17 +3,34 @@ import Axios from "axios"
 
 const baseUrl = "http://localhost:5000"
 export const postItem = (item) =>{
-    console.log(item, "form action")
+    uploadPic(item)
+    item.pictures = item.pictures[0].name
     return {
         type: POST_ITEM,
         payload: Axios.post(baseUrl + "/items",{item})
-        .then((res)=>{
-            console.log(res)
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
     }
+}
+
+export const uploadPic = (item) =>{
+    if(item.pictures && item.pictures[0]){
+        const formData = new FormData();
+        formData.append('file', item.pictures[0])
+        return {
+            type: POST_ITEM,
+            payload: Axios.post(baseUrl + "/upload", formData, {
+                headers: {
+                  'Content-Type': 'multipart/form-data'
+                }})
+            .then((res)=>{
+                console.log(res)
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        }
+
+    }
+
 }
 
 

@@ -1,6 +1,10 @@
 import React from "react";
 import { MDBFooter } from "mdbreact";
 
+// icon imports
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 // styling imports
 import { withStyles } from '@material-ui/core/styles';
@@ -36,6 +40,7 @@ const FooterPage = (props) => {
       <div className={classes.signature}>
         <p>Copyright: Daniel Ray Lackey</p>
       </div>
+      <FontAwesomeIcon icon={faCoffee} />
     </MDBFooter>
   </div>
    

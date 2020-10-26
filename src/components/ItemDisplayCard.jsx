@@ -15,11 +15,12 @@ const ItemDisplayCard = (props) => {
   const {classes,
         itemDescription,
         askingPrice,
-        itemDetails
+        itemDetails,
+        pictures
         } = props
 
 
-
+        console.log("HERE IS A PIC OBJECT", pictures)
   return (
     <Card className={classes.root}>
       <cardActionArea>
@@ -34,7 +35,7 @@ const ItemDisplayCard = (props) => {
       />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
+        // image={picture}
         title="Paella dish"
       />
       <CardContent>

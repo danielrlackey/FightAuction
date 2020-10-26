@@ -46,6 +46,7 @@ const BrowseItemsPage = (props) => {
                         >
                         
                             {posts && posts.userPosts && posts.userPosts.map((post)=>{
+                                console.log(post)
                             return(
                                 <Grid container item xs={12} md={6} lg={4}>
                                     <ItemDisplayCard 
