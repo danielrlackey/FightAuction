@@ -2,35 +2,26 @@ export const styles = theme => ({
     root: {
         background: "rgba(0,0,0,0.7)",
         color: "white",
-    },
-    title: {
-
+        marginBottom: "-40px"
     },
     linkContainer: {
+        textDecoration: "none",
+        color: "#white",
         display: "flex",
         justifyContent: "center",
-        paddingTop: "70px"
-    },
-    links: {
-        textDecoration: "none",
-        color: "#white"
-    },
-    a: {
-        textDecoration: "none !important",
-    },
-    signature: {
-        display: "flex",
-        justifyContent: "flex-end",
-        marginRight: "40px",
-        marginBottom: "-60px"
+        marginRight: "20px"
     },
     iconContainer: {
-
+        display: "flex",
+        justifyContent: "center"
     },
     icons: {
         textDecoration: "none",
-        marginLeft: "20px",
-        marginBottom: "10px",
-        color: "white"
-    }
+        color: "#c2252f",
+        marginRight: "10px"
+    },
+    signature: {
+        textAlign: "center",
+        paddingBottom: "4px"
+    },
     });

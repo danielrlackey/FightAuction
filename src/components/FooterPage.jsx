@@ -22,35 +22,29 @@ const FooterPage = (props) => {
     <div className={classes.root}>
          <MDBFooter className={classes.footer}>
       <div className={classes.linkContainer}>
-          <h5 className="title">Links</h5>
             <ul>
-              <li className={classes.links}>
+              <li>
                 <p>Information</p>
               </li>
-              <li className={classes.links}>
+              <li>
                 <p >Event Tickets</p>
               </li>
-              <li className={classes.links}>
+              <li>
                 <p>Contact</p>
               </li>
-              <li className={classes.links}>
+              <li>
                 <p>About Us</p>
               </li>
             </ul>
-      </div>
-      <div className={classes.signature}>
-        <p>Copyright: Daniel Ray Lackey</p>
-      </div>
+      </div> 
       <div className={classes.iconContainer}>
         <a href="https://www.facebook.com/daniel.lackey.54">
             <FontAwesomeIcon 
               icon={faFacebookSquare} 
               size="3x" 
               className={classes.icons}
-            />
-            
+            /> 
         </a>
-      
         <a href="https://github.com/danielrlackey">
             <FontAwesomeIcon 
               icon={faGithub} 
@@ -66,7 +60,10 @@ const FooterPage = (props) => {
               className={classes.icons}
             />
         </a>
-      </div> 
+      </div>
+        <div className={classes.signature}>
+          <p>Copyright: Daniel Ray Lackey</p>
+        </div>
     </MDBFooter>
   </div>
    

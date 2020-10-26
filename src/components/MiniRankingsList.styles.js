@@ -1,7 +1,7 @@
 export const styles = theme => ({
      root: {
           background: "rgba(255, 255, 255, 0.1)",
-          color: "#c2252f",
+          // color: "#c2252f",
      },
      link: {
         textDecoration: "none",
@@ -13,6 +13,7 @@ export const styles = theme => ({
         textShadow: "2px 2px 4px #000000",
    },
    rankingsList: {
+        color: "#c2252f",
         textAlign: "center",
         paddingRight: "15px",
         paddingBottom: "15px",

@@ -72,6 +72,7 @@ app.post("/items", function(req, res){
     item.itemDescription = req.body.item.itemDescription
     item.askingPrice = req.body.item.askingPrice
     item.itemDetails = req.body.item.itemDetails
+    item.pictures = req.body.item.pictures
     item.save((err,res)=>{
     })
 

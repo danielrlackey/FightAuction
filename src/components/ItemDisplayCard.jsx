@@ -35,7 +35,7 @@ const ItemDisplayCard = (props) => {
       />
       <CardMedia
         className={classes.media}
-        // image={picture}
+        image={pictures}
         title="Paella dish"
       />
       <CardContent>
