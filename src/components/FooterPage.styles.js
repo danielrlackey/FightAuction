@@ -12,8 +12,8 @@ export const styles = theme => ({
         paddingTop: "70px"
     },
     links: {
-        textDecoration: "underline #000000",
-        color: "#000000"
+        textDecoration: "none",
+        color: "#white"
     },
     a: {
         textDecoration: "none !important",
@@ -31,6 +31,6 @@ export const styles = theme => ({
         textDecoration: "none",
         marginLeft: "20px",
         marginBottom: "10px",
-        color: "#c2252f"
+        color: "white"
     }
     });

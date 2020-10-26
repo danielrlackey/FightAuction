@@ -24,17 +24,17 @@ const FooterPage = (props) => {
       <div className={classes.linkContainer}>
           <h5 className="title">Links</h5>
             <ul>
-              <li className="links">
-                <a className="links" href="#!">Information</a>
+              <li className={classes.links}>
+                <p>Information</p>
               </li>
-              <li className="links">
-                <a href="#!">Event Tickets</a>
+              <li className={classes.links}>
+                <p >Event Tickets</p>
               </li>
-              <li className="links">
-                <a href="#!">Contact</a>
+              <li className={classes.links}>
+                <p>Contact</p>
               </li>
-              <li className="links">
-                <a href="#!">About Us</a>
+              <li className={classes.links}>
+                <p>About Us</p>
               </li>
             </ul>
       </div>
