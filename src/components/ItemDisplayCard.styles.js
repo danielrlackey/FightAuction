@@ -5,7 +5,7 @@ export const styles = theme => ({
     root: {
         width: 400,
         marginLeft: "35px",
-        marginBottom: "35px",
+        marginBottom: "60px",
         marginTop: "35px"
       },
       media: {
@@ -25,5 +25,15 @@ export const styles = theme => ({
       avatar: {
         backgroundColor: "#c2252f",
       },
+      btn: {
+        color: "white",
+        backgroundColor: "#c2252f",
+      },
+      btncontainer: {
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "20px"
+
+      }
       
 });

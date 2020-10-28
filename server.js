@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
 app.use(cors());
 app.use(express.static('public'));
+app.set('port', (process.env.PORT || 5000));
 // code to connect datbase below
 const URI = "mongodb+srv://skunk_hunnt:P@cquiaop4p224@cluster0.4cqzd.mongodb.net/Fight_Auction?retryWrites=true&w=majority"
 mongoose.connect(URI, { useNewUrlParser: true })
@@ -96,6 +97,6 @@ app.post('/upload', (req, res) => {
 });
 
 
-app.listen(5000, function(){
-    console.log("server has started...")
+app.listen(app.get('port'), function() {
+    console.log('Server started on port '+app.get('port'));
 });

@@ -28,16 +28,6 @@ const BrowseItemsPage = (props) => {
                 <div className={classes.header}>
                     <h1>Purchase fight memorabilia and more!</h1>
                 </div>
-                <div className={classes.list}>
-                    <h3 className={classes.title2}>things you can find here</h3>
-                    <ul>
-                        <li>Authographed Fight memorabilia</li>
-                        <li>Historical Fight Pieces</li>
-                        <li>New Equiptment</li>
-                        <li>Event Tickets</li>
-                    </ul>
-                    
-                </div>
                         <Grid 
                         container 
                         spacing={1}
@@ -46,7 +36,6 @@ const BrowseItemsPage = (props) => {
                         >
                         
                             {posts && posts.userPosts && posts.userPosts.map((post)=>{
-                                console.log(post)
                             return(
                                 <Grid container item xs={12} md={6} lg={4}>
                                     <ItemDisplayCard 

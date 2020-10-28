@@ -11,10 +11,5 @@ export const styles = theme => ({
     },
     title2: {
         marginLeft: "25px",
-    },
-    list: {
-        display: "table",
-        margin: "0 auto",
-        color: "#c2252f",
     }
 });

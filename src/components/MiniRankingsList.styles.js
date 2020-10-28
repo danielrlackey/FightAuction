@@ -1,7 +1,7 @@
 export const styles = theme => ({
      root: {
           background: "rgba(255, 255, 255, 0.1)",
-          // color: "#c2252f",
+          marginBottom: "50px"
      },
      link: {
         textDecoration: "none",

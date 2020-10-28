@@ -17,7 +17,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
         
             
             case GET_DATA_REQUEST:
-                if(action.payload){
+                if(action.payload && action.payload.p4pFighters){
                     return {
                         ...state,
                         p4pFighters: [  
@@ -28,7 +28,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
             }break;
 
             case GET_DIVISIONAL_DATA:
-                if(action.payload){
+                if(action.payload && action.payload.champsByDivision){
                     return {
                         ...state,
                         champsByDivision: [
@@ -39,7 +39,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
             }break;
 
             case GET_UFCP4P_DATA: 
-                if(action.payload){
+                if(action.payload && action.payload.ufcP4pfighters){
                     return{
                         ...state,
                         ufcP4pFighters: [  
@@ -50,7 +50,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
             }break;
 
             case GET_UFC_DIVISIONS: 
-                if(action.payload){
+                if(action.payload && action.payload.ufcDivisions){
                     
                     return{
                         ...state,

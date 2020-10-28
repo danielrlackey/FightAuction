@@ -8,6 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import {styles} from "./ItemDisplayCard.styles.js";
 import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -42,6 +43,14 @@ const ItemDisplayCard = (props) => {
         <Typography variant="body2" color="textSecondary" component="p">
             {itemDetails}
         </Typography>
+        <div className={classes.btncontainer}>
+        <Button 
+          variant="contained"
+          className={classes.btn} 
+          >
+          Contact
+        </Button>
+        </div>
       </CardContent>
       <CardActions disableSpacing>
       </CardActions>
